@@ -10,18 +10,9 @@ arch=('x86_64')
 url="https://github.com/cakenes/i3-autotiler"
 license=("MIT")
 depends=("i3-wm")
-source=("${pkgname}::git+${url}.git")
+source=("https://github.com/cakenes/i3-autotiler/raw/main/src/i3-autotiler")
 sha256sums=("SKIP")
 
 package() {
-    install -Dm755 "${pkgname}/src/i3-autotiler" "$pkgdir/usr/bin/i3-autotiler"
-    install -Dm644 "${pkgname}/src/i3-autotiler.service" "$pkgdir/usr/lib/systemd/user/i3-autotiler.service"
-}
-
-post_install() {
-    systemctl enable --user --now i3-autotiler.service
-}
-
-post_remove() {
-    systemctl disable -user --now i3-autotiler.service
+    install -Dm755 "i3-autotiler" "$pkgdir/usr/bin/i3-autotiler"
 }
