@@ -4,7 +4,7 @@ Simple autotiler written in <b>GO</b> & <b>BASH</b>, pick your poison.<br />
 Will listen for events from <code>i3-msg</code> and compare focused window width & height to pick an direction.<br />
 
 ### Installing (pick one):
-- Download & copy over <code>i3-autotiler</code> to <code>/usr/local/bin/</code>
+- Download & copy over <code>src/i3-autotiler</code> to <code>/usr/local/bin/</code>
 - Download <code>PKGBUILD</code> and install with <code>makepkg -si</code>
 
 ### Running:
