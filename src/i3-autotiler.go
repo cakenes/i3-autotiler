@@ -25,14 +25,13 @@ type WindowRect struct {
 }
 
 func waitForI3() {
-	cmd := exec.Command("ps", "-C", "i3", "-o", "pid=")
 	ticker := time.NewTicker(time.Second)
 	defer ticker.Stop()
 
 	for {
 		select {
 		case <-ticker.C:
-			output, _ := cmd.Output()
+			output, _ := exec.Command("ps", "-C", "i3", "-o", "pid=").Output()
 			if len(output) > 0 {
 				println("Process found for i3:", output)
 				return

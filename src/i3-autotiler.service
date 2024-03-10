@@ -5,7 +5,6 @@ Description=Autotiler for i3
 Type=simple
 ExecStart=/usr/bin/i3-autotiler
 Restart=on-failure
-StandardOutput=file:%h/i3-autotiler.log
 
 [Install]
 WantedBy=default.target
