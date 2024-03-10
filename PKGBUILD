@@ -10,9 +10,9 @@ arch=('x86_64')
 url="https://github.com/cakenes/i3-autotiler"
 license=("MIT")
 depends=("i3-wm")
-source=("https://github.com/cakenes/i3-autotiler/raw/main/src/i3-autotiler")
+source=("${pkgname}::git+${url}.git")
 sha256sums=("SKIP")
 
 package() {
-    install -Dm755 "i3-autotiler" "$pkgdir/usr/bin/i3-autotiler"
+    install -Dm755 "${pkgname}/src/i3-autotiler" "$pkgdir/usr/bin/i3-autotiler"
 }
