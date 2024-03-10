@@ -32,11 +32,8 @@ func waitForI3() {
 	for {
 		select {
 		case <-ticker.C:
-			output, err := cmd.Output()
-			if err != nil {
-				log.Fatal(err)
-				return
-			} else if len(output) > 0 {
+			output, _ := cmd.Output()
+			if len(output) > 0 {
 				println("Process found for i3:", output)
 				return
 			} else {
