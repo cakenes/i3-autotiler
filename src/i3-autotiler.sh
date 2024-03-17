@@ -7,14 +7,10 @@ i3-msg -t subscribe -m '[ "window" ]' | while read -r line; do
 
     if [[ $type == '"focus"' ]]; then
         if [[ $width -gt $height ]]; then
-            if [[ $1 == "--debug" ]]; then
-                echo "Width $width ,Height $height ,Next split will be horizontal"
-            fi
+	    echo "Width $width, Height $height, Next split will be horizontal"
             i3-msg split horizontal &>/dev/null
         else
-            if [[ $1 == "--debug" ]]; then
-                echo "Width $width ,Height $height ,Next split will be vertical"
-            fi
+            echo "Width $width, Height $height, Next split will be vertical"
             i3-msg split vertical &>/dev/null
         fi
     fi
